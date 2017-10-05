@@ -1,98 +1,98 @@
 <!DOCTYPE html>
 <html manifest="index.manifest">
 <head>
-    <title>M 幣轉換器</title>
-    <meta charset="utf8">
-    <meta name="theme-color" content="#009688">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-        body {
-            background: #EEE;
-            font-size: 15px;
-            font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", "Microsoft JhengHei", wf_SegoeUI, "Segoe UI", Segoe, "Segoe WP", Tahoma, Verdana, Ubuntu, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, 微軟正黑體, "LiHei Pro", "WenQuanYi Micro Hei", "Droid Sans Fallback", "AR PL UMing TW", Roboto, "Helvetica Neue", "Hiragino Maru Gothic ProN", メイリオ, "ヒラギノ丸ゴ ProN W4", Meiryo, "Droid Sans", sans-serif
-        }
-        .container {
-            width:90%;
-            max-width:600px;
-            margin: 15vh auto 0
-        }
-        .wrapper {
-            background:#FFF;
-            padding: 15px;
-            box-shadow: 0 0 2px 2px #CCC;
-            overflow: hidden
-        }
-        input {
-            width: 100%;
-            line-height: 32px;
-            font-size: 16px;
-            //text-align: right;
-            border: none;
-            border-bottom: 2px solid #CCC
-        }
-        input:focus {
-            outline: 0;
-            border-color: #009688
-        }
-        .result {
-            margin-top: 20px;
-            color: #666
-        }
-        .result div {
-            text-align: right
-        }
-        .result b {
-            color: #444
-        }
-        #cost,
-        #donate {
-            margin-top: 5px;
-            font-size: 32px;
-            color: #222
-        }
-        footer {
-            text-align: center;
-            color: #555;
-            margin-top: 15px
-        }
-        a {
-            color: #009688;
-            text-decoration: none
-        }
-    </style>
-    <script>
-        function transfer() {
-            var coin = parseInt(document.querySelector('input').value || 0);
-            if(coin < 0) coin = 0;
-            document.querySelector('#before').innerHTML = coin;
-            document.querySelector('#before2').innerHTML = coin;
-            document.querySelector('#cost').innerHTML = Math.ceil(coin / 0.913);
-            document.querySelector('#donate').innerHTML = Math.floor(coin * 0.913);
-        }
-    </script>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41039934-6"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-41039934-6');
-	</script>
+	<title>M 幣轉換器</title>
+	<meta charset="utf8">
+	<meta name="theme-color" content="#009688">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+	body {
+		background: #EEE;
+		font-size: 15px;
+		font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", "Microsoft JhengHei", wf_SegoeUI, "Segoe UI", Segoe, "Segoe WP", Tahoma, Verdana, Ubuntu, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, 微軟正黑體, "LiHei Pro", "WenQuanYi Micro Hei", "Droid Sans Fallback", "AR PL UMing TW", Roboto, "Helvetica Neue", "Hiragino Maru Gothic ProN", メイリオ, "ヒラギノ丸ゴ ProN W4", Meiryo, "Droid Sans", sans-serif
+	}
+	.container {
+		width:90%;
+		max-width:600px;
+		margin: 15vh auto 0
+	}
+	.wrapper {
+		background:#FFF;
+		padding: 15px;
+		box-shadow: 0 0 2px 2px #CCC;
+		overflow: hidden
+	}
+	input {
+		width: 100%;
+		line-height: 32px;
+		font-size: 16px;
+		//text-align: right;
+		border: none;
+		border-bottom: 2px solid #CCC
+	}
+	input:focus {
+		outline: 0;
+		border-color: #009688
+	}
+	.result {
+		margin-top: 20px;
+		color: #666
+	}
+	.result div {
+		text-align: right
+	}
+	.result b {
+		color: #444
+	}
+	#cost,
+	#donate {
+		margin-top: 5px;
+		font-size: 32px;
+		color: #222
+	}
+	footer {
+		text-align: center;
+		color: #555;
+		margin-top: 15px
+	}
+	a {
+		color: #009688;
+		text-decoration: none
+	}
+</style>
+<script>
+	function transfer() {
+		var coin = parseInt(document.querySelector('input').value || 0);
+		if(coin < 0) coin = 0;
+		document.querySelector('#before').innerHTML = coin;
+		document.querySelector('#before2').innerHTML = coin;
+		document.querySelector('#cost').innerHTML = Math.ceil(coin / 0.913);
+		document.querySelector('#donate').innerHTML = Math.floor(coin * 0.913);
+	}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41039934-6"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-41039934-6');
+</script>
 </head>
 <body>
-    <div class="container">
-        <div class="wrapper">
-            <input type="number" step="1" placeholder="輸入 M 幣金額（正整數） ....." autofocus oninput="transfer()">
-            <br><br>
-            <div class="result">
-                斗內 <b id="before">0</b> M 幣須花費
-                <div><span id="cost">0</span> <small>M 幣</small></div>
-            </div>
-            <div class="result">
-                花費 <b id="before2">0</b> M 幣可斗內
-                <div><span id="donate">0</span> <small>M 幣</small></div>
-            </div>
-        </div>
-        <footer>Made by <a href="https://omwu.me" target="_blank">Henry Wu</a></footer>
-    </div>
+	<div class="container">
+		<div class="wrapper">
+			<input type="number" step="1" placeholder="輸入 M 幣金額（正整數） ....." autofocus oninput="transfer()">
+			<br><br>
+			<div class="result">
+				斗內 <b id="before">0</b> M 幣須花費
+				<div><span id="cost">0</span> <small>M 幣</small></div>
+			</div>
+			<div class="result">
+				花費 <b id="before2">0</b> M 幣可斗內
+				<div><span id="donate">0</span> <small>M 幣</small></div>
+			</div>
+		</div>
+		<footer>Made by <a href="https://omwu.me" target="_blank">Henry Wu</a></footer>
+	</div>
 </body>
 </html>
