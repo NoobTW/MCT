@@ -64,12 +64,19 @@
         function transfer() {
             var coin = parseInt(document.querySelector('input').value || 0);
             if(coin < 0) coin = 0;
-            document.querySelector('.before').innerHTML = coin;
-            document.querySelector('.before2').innerHTML = coin;
+            document.querySelector('#before').innerHTML = coin;
+            document.querySelector('#before2').innerHTML = coin;
             document.querySelector('#cost').innerHTML = Math.ceil(coin / 0.913);
             document.querySelector('#donate').innerHTML = Math.floor(coin * 0.913);
         }
     </script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41039934-6"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-41039934-6');
+	</script>
 </head>
 <body>
     <div class="container">
@@ -77,11 +84,11 @@
             <input type="number" step="1" placeholder="輸入 M 幣金額（正整數） ....." autofocus oninput="transfer()">
             <br><br>
             <div class="result">
-                斗內 <b class="before">0</b> M 幣須花費
+                斗內 <b id="before">0</b> M 幣須花費
                 <div><span id="cost">0</span> <small>M 幣</small></div>
             </div>
             <div class="result">
-                花費 <b class="before2">0</b> M 幣可斗內
+                花費 <b id="before2">0</b> M 幣可斗內
                 <div><span id="donate">0</span> <small>M 幣</small></div>
             </div>
         </div>
