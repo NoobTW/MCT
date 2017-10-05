@@ -76,6 +76,7 @@
 		document.querySelector('#cost').innerHTML = Math.ceil(coin / 0.913);
 		document.querySelector('#donate').innerHTML = Math.floor(coin * 0.913);
 	}
+	transfer();
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41039934-6"></script>
 <script>
@@ -92,11 +93,11 @@
 			<br><br>
 			<div class="result">
 				斗內 <b id="before">0</b> M 幣須花費
-				<div><span id="cost">0</span> <small>M 幣</small></div>
+				<div><span id="cost">0</span> <small> M 幣</small></div>
 			</div>
 			<div class="result">
 				花費 <b id="before2">0</b> M 幣可斗內
-				<div><span id="donate">0</span> <small>M 幣</small></div>
+				<div><span id="donate">0</span> <small> M 幣</small></div>
 			</div>
 		</div>
 		<footer>Made by <a href="https://omwu.me" target="_blank">Henry Wu</a></footer>
